@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="index" namespace="/" extends="struts-default">
+		<action name="*" class="com.my.action.ProductActin" method="{1}">
+			<result name="list">/WEB-INF/jsp/index.jsp</result>
+			<result name="success">/WEB-INF/jsp/add.jsp</result>
+		</action>
+		<action name="addProductSubmit" class="com.my.action.ProductActin" method="addProduct">
+			<result name="add" type="chain">toAdd</result>
+			<result name="fail">/WEB-INF/jsp/add.jsp</result>
+		</action>
+		
+	</package>
+	
+</struts>
